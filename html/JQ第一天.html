@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div id="box">0</div>-->
+		<ul>
+			<li id="c-1">班长今天老帅了，嗷嗷帅...</li>
+		    <li id="c0">班长今天老帅了，嗷嗷帅...</li>
+		    <li class="c1">我的类名是c1...</li>
+		    <li>我可以被点击</li>
+		    <li>我可以被双击</li>
+		    <li>你怕是要再点一下我哦</li>
+		    <li style="display: none;border:10px solid purple">我是被隐藏的li...</li>
+		    <li>鼠标移入</li>
+		</ul>
+	</body>
+</html>
+<script src="../JQ/jquery-1.11.1.min.js" type="text/javascript">
+	
+</script>
+<script type="text/javascript">
+
+var json={
+	一:100,
+	a:function(){
+		alert('哈哈');
+	}
+}
+
+json.a();//这个json.a代表函数名称，也就相当于一个标识符
+
+
+
+
+$(function(){
+	$('li').css('opacity','0.5');
+	$('li:even').css('border-radius','10px');
+	$('li:even').css('width','300');
+	$('li:odd').css('height','50');
+	$('#c-1').get(0).style.background='yellow';
+	$('#c0')[0].style.background='cornflowerblue';//JQ对象转换成JS对象并且绑定JS事件
+	$('.c1').css('background','red');
+	$('li:hidden').css('display','block');
+	$('li:eq(3)').click(function(){
+		alert('我是JQuery对象事件');
+	})
+	$('li:eq(4)').dblclick(function(){
+		alert('我也是JQuery对象事件');
+	})
+	$('li:eq(4)').css('background','green')
+	var oLi=document.getElementsByTagName('ul')[0].getElementsByTagName('li')[5];
+	$(oLi).click(function(){
+		alert('我是js原生DOM对象，转换成了JQquery对象，并且绑定了JQ事件');
+	})
+})
+	$(document).ready(function(){
+		alert('我是完整版');
+	})
+	$(window).ready(function(){
+		alert('并不会被覆盖');
+	})
+	$('li:last').mouseover(function(){
+		alert('一番队，解散');
+	});
+	
+
+
+
+
+
+//	$(function(){
+//		alert('可以')
+//		alert('haha')
+//	})
+//	$(document).ready(function(){
+//		alert('嘻嘻');
+//		alert('?');
+//	})
+//	$(window).ready(function(){
+//		alert('哇');
+//		alert('欧');
+//	})
+//	$("#box").click(function(){
+//		alert('90');
+//	})
+</script>

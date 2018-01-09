@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.shutter{
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.shutter ul{
+			list-style: none;
+		}
+		.shutter ul li{
+		 	position: absolute;
+		 	top: 0;
+		}
+		.shutter ul li.no0{left: 0;}
+		.shutter ul li.no1{left: 160px;}
+		.shutter ul li.no2{left: 320px;}
+		.shutter ul li.no3{left: 480px;}
+		.shutter ul li.no4{left: 640px;}
+	</style>
+</head>
+<body>
+	<div class="shutter">
+		<ul>
+			<li class="no0">
+				<a href="">
+					<img src="../img/0.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no1">
+				<a href="">
+					<img src="../img/1.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no2">
+				<a href="">
+					<img src="../img/2.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no3">
+				<a href="">
+					<img src="../img/3.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no4">
+				<a href="">
+					<img src="../img/4.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script>
+
+$(window).ready(function(){
+	var left1=$('li:eq(1)').css('left');
+	var left2=$('li:eq(2)').css('left');
+	var left3=$('li:eq(3)').css('left');
+	var left4=$('li:eq(4)').css('left');
+	
+	
+	$('li:eq(0)').mouseenter(function(){
+
+		
+		$('li:eq(1)').animate({left:480},300)
+		$('li:eq(2)').animate({left:560},300)
+		$('li:eq(3)').animate({left:640},300)
+		$('li:eq(4)').animate({left:720},300)
+	})
+	$('li:eq(0)').mouseleave(function(){
+		$('li:eq(1)').animate({left:left1},300)
+		$('li:eq(2)').animate({left:left2},300)
+		$('li:eq(3)').animate({left:left3},300)
+		$('li:eq(4)').animate({left:left4},300)
+	})
+
+
+
+
+	$('li:eq(1)').mouseenter(function(){
+		$('li:eq(1)').animate({left:80},300)
+		$('li:eq(2)').animate({left:560},300)
+		$('li:eq(3)').animate({left:640},300)
+		$('li:eq(4)').animate({left:720},300)
+	})
+	$('li:eq(1)').mouseleave(function(){
+		$('li:eq(1)').animate({left:left1},300)
+		$('li:eq(2)').animate({left:left2},300)
+		$('li:eq(3)').animate({left:left3},300)
+		$('li:eq(4)').animate({left:left4},300)
+	})
+	
+	
+	
+	$('li:eq(2)').mouseenter(function(){
+		$('li:eq(1)').animate({left:80},300)	
+		$('li:eq(2)').animate({left:160},300)
+		
+		$('li:eq(3)').animate({left:640},300)
+		$('li:eq(4)').animate({left:720},300)
+	})
+	$('li:eq(2)').mouseleave(function(){
+		$('li:eq(1)').animate({left:left1},300)
+		$('li:eq(2)').animate({left:left2},300)
+		$('li:eq(3)').animate({left:left3},300)
+		$('li:eq(4)').animate({left:left4},300)
+	})
+	
+	
+	$('li:eq(3)').mouseenter(function(){
+		$('li:eq(1)').animate({left:80},300)
+		$('li:eq(2)').animate({left:160},300)	
+		$('li:eq(3)').animate({left:240},300)
+		
+		$('li:eq(4)').animate({left:720},300)
+	})
+	$('li:eq(3)').mouseleave(function(){
+		$('li:eq(1)').animate({left:left1},300)
+		$('li:eq(2)').animate({left:left2},300)
+		$('li:eq(3)').animate({left:left3},300)
+		$('li:eq(4)').animate({left:left4},300)
+	})
+	
+	
+	
+	$('li:eq(4)').mouseenter(function(){
+		$('li:eq(1)').animate({left:80},300)
+		$('li:eq(2)').animate({left:160},300)
+		$('li:eq(3)').animate({left:240},300)
+		$('li:eq(4)').animate({left:320},300)
+	})
+	$('li:eq(4)').mouseleave(function(){
+		$('li:eq(1)').animate({left:left1},300)
+		$('li:eq(2)').animate({left:left2},300)
+		$('li:eq(3)').animate({left:left3},300)
+		$('li:eq(4)').animate({left:left4},300)
+	})
+	
+})
+	
+</script>

@@ -12,6 +12,12 @@
 		}
 		.shutter{
 			width: 800px;
+			
+			/* 总共宽度是 800， 1张图片是 560，所以剩下了 240，
+			 * 平分给其他4张图片，相当于每张是 60
+			 * 
+			 如果说现在显示的是第3张，那么左边分别是： 0, 
+			 * */
 			height: 300px;
 			border: 1px solid #000;
 			margin: 100px auto;
@@ -37,27 +43,27 @@
 		<ul>
 			<li class="no0">
 				<a href="">
-					<img src="../img/0.jpg" alt="" />
+					<img src="images/0.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no1">
 				<a href="">
-					<img src="../img/1.jpg" alt="" />
+					<img src="images/1.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no2">
 				<a href="">
-					<img src="../img/2.jpg" alt="" />
+					<img src="images/2.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no3">
 				<a href="">
-					<img src="../img/3.jpg" alt="" />
+					<img src="images/3.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no4">
 				<a href="">
-					<img src="../img/4.jpg" alt="" />
+					<img src="images/4.jpg" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -65,93 +71,80 @@
 
 </body>
 </html>
-<script src="../js/jquery-1.8.2.min.js"></script>
+<script src="js/jquery-1.8.2.min.js"></script>
 <script>
 
 $(window).ready(function(){
-	var left1=$('li:eq(1)').css('left');
-	var left2=$('li:eq(2)').css('left');
-	var left3=$('li:eq(3)').css('left');
-	var left4=$('li:eq(4)').css('left');
+	function get(){
+		var a=$('li:eq(1)').css('left');console.log(a);
+		var b=$('li:eq(2)').css('left');console.log(b);
+		var c=$('li:eq(3)').css('left');console.log(c);
+		var d=$('li:eq(4)').css('left');console.log(d);
+	}
+get();
 	
 	
 	$('li:eq(0)').mouseenter(function(){
-
-		
+//		get();
 		$('li:eq(1)').animate({left:480},300)
 		$('li:eq(2)').animate({left:560},300)
 		$('li:eq(3)').animate({left:640},300)
 		$('li:eq(4)').animate({left:720},300)
 	})
-	$('li:eq(0)').mouseleave(function(){
-		$('li:eq(1)').animate({left:left1},300)
-		$('li:eq(2)').animate({left:left2},300)
-		$('li:eq(3)').animate({left:left3},300)
-		$('li:eq(4)').animate({left:left4},300)
-	})
-
-
+	$('li:eq(0)').mouseleave(lea)
 
 
 	$('li:eq(1)').mouseenter(function(){
+//		get();
 		$('li:eq(1)').animate({left:80},300)
 		$('li:eq(2)').animate({left:560},300)
 		$('li:eq(3)').animate({left:640},300)
 		$('li:eq(4)').animate({left:720},300)
 	})
-	$('li:eq(1)').mouseleave(function(){
-		$('li:eq(1)').animate({left:left1},300)
-		$('li:eq(2)').animate({left:left2},300)
-		$('li:eq(3)').animate({left:left3},300)
-		$('li:eq(4)').animate({left:left4},300)
-	})
+	$('li:eq(1)').mouseleave(lea)
 	
 	
 	
 	$('li:eq(2)').mouseenter(function(){
+//		get();
 		$('li:eq(1)').animate({left:80},300)	
 		$('li:eq(2)').animate({left:160},300)
 		
 		$('li:eq(3)').animate({left:640},300)
 		$('li:eq(4)').animate({left:720},300)
 	})
-	$('li:eq(2)').mouseleave(function(){
-		$('li:eq(1)').animate({left:left1},300)
-		$('li:eq(2)').animate({left:left2},300)
-		$('li:eq(3)').animate({left:left3},300)
-		$('li:eq(4)').animate({left:left4},300)
-	})
+	$('li:eq(2)').mouseleave(lea)
 	
 	
 	$('li:eq(3)').mouseenter(function(){
+//		get();
 		$('li:eq(1)').animate({left:80},300)
 		$('li:eq(2)').animate({left:160},300)	
 		$('li:eq(3)').animate({left:240},300)
 		
 		$('li:eq(4)').animate({left:720},300)
 	})
-	$('li:eq(3)').mouseleave(function(){
-		$('li:eq(1)').animate({left:left1},300)
-		$('li:eq(2)').animate({left:left2},300)
-		$('li:eq(3)').animate({left:left3},300)
-		$('li:eq(4)').animate({left:left4},300)
-	})
+	$('li:eq(3)').mouseleave(lea)
 	
 	
 	
 	$('li:eq(4)').mouseenter(function(){
+//		get();
 		$('li:eq(1)').animate({left:80},300)
 		$('li:eq(2)').animate({left:160},300)
 		$('li:eq(3)').animate({left:240},300)
 		$('li:eq(4)').animate({left:320},300)
 	})
-	$('li:eq(4)').mouseleave(function(){
-		$('li:eq(1)').animate({left:left1},300)
-		$('li:eq(2)').animate({left:left2},300)
-		$('li:eq(3)').animate({left:left3},300)
-		$('li:eq(4)').animate({left:left4},300)
-	})
+	$('li:eq(4)').mouseleave(lea)
 	
 })
-	
+		function lea(){
+//			get();
+		$('li:eq(0)').animate({left:0},300)
+		$('li:eq(1)').animate({left:160},300)
+		$('li:eq(2)').animate({left:320},300)
+		$('li:eq(3)').animate({left:480},300)
+		$('li:eq(4)').animate({left:640},300)
+	}
+
 </script>

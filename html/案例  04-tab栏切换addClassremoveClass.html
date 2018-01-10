@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+		button{
+			width:100px;
+			height:100px;
+		}
+		.h{
+			background:orangered;
+		}
+		.l{
+			background: darkblue;
+		}
+	</style>
+</head>
+<body>
+	<button id="hong" value="红色"></button>
+	<!--<button id="lan" value="蓝色"></button>-->
+	<ul>
+  <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+  <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+  <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+ <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+  <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+ <li>魂消香断玉环冷，锦裘绣帕不闻香.......</li>
+    </ul>
+
+</body>
+</html>
+<script src="../js/jquery-1.8.2.min.js"></script>
+<script>
+$(function(){
+//	$('li:even').css('background','purple');
+//	$('li:odd').css('background','yellow');
+	var i=0;
+	$('#hong').click(function(){
+		
+		var len=$('li').length;
+		if(i==0){
+			$('li').removeClass('l')
+			$('li').eq(i).addClass('l')
+		}
+		else if (i<len){
+			$('li').removeClass('l')
+			$('li').eq(i).addClass('l')
+		}else{
+			i=0;
+			$('li').removeClass('l')
+			$('li').eq(i).addClass('l')
+		}
+			i++;console.log(i)
+	})
+	$('#lan').click(function(){
+//		$('li:even').addClass('l')
+		$('li:odd').addClass('h')
+	})
+	
+})
+
+</script>

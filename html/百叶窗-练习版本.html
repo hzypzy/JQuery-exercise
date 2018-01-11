@@ -43,27 +43,27 @@
 		<ul>
 			<li class="no0">
 				<a href="">
-					<img src="images/0.jpg" alt="" />
+					<img src="../img/0.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no1">
 				<a href="">
-					<img src="images/1.jpg" alt="" />
+					<img src="../img/1.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no2">
 				<a href="">
-					<img src="images/2.jpg" alt="" />
+					<img src="../img/2.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no3">
 				<a href="">
-					<img src="images/3.jpg" alt="" />
+					<img src="../img/3.jpg" alt="" />
 				</a>
 			</li>
 			<li class="no4">
 				<a href="">
-					<img src="images/4.jpg" alt="" />
+					<img src="../imgs/4.jpg" alt="" />
 				</a>
 			</li>
 		</ul>
@@ -71,11 +71,12 @@
 
 </body>
 </html>
-<script src="js/jquery-1.8.2.min.js"></script>
+<script src="../js/jquery-1.8.2.min.js"></script>
 <script>
 
 $(window).ready(function(){
 	function get(){
+		
 		var a=$('li:eq(1)').css('left');console.log(a);
 		var b=$('li:eq(2)').css('left');console.log(b);
 		var c=$('li:eq(3)').css('left');console.log(c);
@@ -86,6 +87,7 @@ get();
 	
 	$('li:eq(0)').mouseenter(function(){
 //		get();
+	//	$(this).stop(true,false)
 		$('li:eq(1)').animate({left:480},300)
 		$('li:eq(2)').animate({left:560},300)
 		$('li:eq(3)').animate({left:640},300)

@@ -16,18 +16,9 @@
 </script>
 <script type="text/javascript">
 $(window).ready(function(){
-//	function Fly(){
-//			this.fly=function(){
-//			setInterval(function(){
-//				var l=Math.random()*1000;
-//				oBox.animate({left:j*Math.random()+l,top:k+500*Math.random()},1000,'linear')
-//			},1000)
-//		}
-//	}
-	
-	
-	
-	for (var i = 0; i < 50; i++) {
+	function Fly(){
+		this.fly=function(){
+		for (var i = 0; i < 50; i++) {
 		var oBox=$('<div class="box"></div>');
 //		console.log(oBox)
 		$('#banner').append(oBox);
@@ -43,13 +34,11 @@ $(window).ready(function(){
 			
 		})(oBox)
 
-	}		
+		}	
+		}
+	}
+	var yhc=new Fly;
+	yhc.fly();
+	
 })
-		
-		
-		
-		
-		
-
-
 </script>

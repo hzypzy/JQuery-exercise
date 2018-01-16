@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				height: 100vh;
+				background: url(img/bg.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+		
+			.snow {
+				width: 45px;
+				height: 40px;
+				background: url(img/snow.gif);
+				background-size: 100% 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		
+	</head>
+	<body>
+	</body>
+</html>
+
+<script src="js/jquery-1.8.2.min.js"></script>
+<script>
+function FireWorm() {
+	
+	
+	this.ele = $("<div></div>")	
+	this.ele.addClass("fireworm")  
+	this.ele.appendTo("body")      
+	
+	
+
+	this.move = function() {
+
+		var x = Math.random() * ($("body").width() - 100)
+		var y = $("body").height() - 100
+		
+
+		var self = this
+		
+
+		this.ele.animate({
+			left: x,
+			top: y
+		}, 1000, function() {
+
+//			self.move()
+		})
+	}
+	
+}
+
+
+new Snow().move()
+
+</script>
+
